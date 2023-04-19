@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice Two</title>
+    <h1>Practice Two</h1>
+    <p></p>
+	<style>
+		#paragraph {
+			margin: 0 auto;
+			padding: 5px;
+			background-color: white;
+			border: 6px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="paragraph">
+		<p>Dummy Text.</p>
+	</div>
+	<div>
+        <p></p>
+        <label for="Border">Border Size Pixel:</label>
+		<input type="text" id="Border" name="Border">
+        <p></p>
+
+        <label for="BRR">Border R (0-255):</label>
+		<input type="text" id="BRR" name="BRR">
+        <p></p>
+        <label for="BRG">Border G (0-255):</label>
+		<input type="text" id="BRG" name="BRG">
+        <p></p>
+        <label for="BRB">Border B (0-255):</label>
+		<input type="text" id="BRB" name="BRB">
+        <p></p>
+        
+        <label for="BGR">Background R (0-255):</label>
+		<input type="text" id="BGR" name="BGR">
+        <p></p>
+        <label for="BGG">Background G (0-255):</label>
+		<input type="text" id="BGG" name="BGG">
+        <p></p>
+        <label for="BGB">Background B (0-255):</label>
+		<input type="text" id="BGB" name="BGB">
+        <p></p>
+
+		<button onclick="changeStyle()">Change style</button>
+
+	</div>
+	<script>
+		function changeStyle() {
+            var borderSize = document.getElementById("Border").value;
+            var borderR = document.getElementById("BRR").value;
+            var borderG = document.getElementById("BRG").value;
+            var borderB = document.getElementById("BRB").value;
+            var backgroundR = document.getElementById("BGR").value;
+            var backgroundG = document.getElementById("BGG").value;
+            var backgroundB = document.getElementById("BGB").value;
+
+            var paragraph = document.getElementById("paragraph");
+
+            // Change border size
+            paragraph.style.borderWidth = borderSize + "px";
+
+            // Change border color
+            var borderColor = "rgb(" + borderR + "," + borderG + "," + borderB + ")";
+            paragraph.style.borderColor = borderColor;
+
+            // Change background color
+            var backgroundColor = "rgb(" + backgroundR + "," + backgroundG + "," + backgroundB + ")";
+            paragraph.style.backgroundColor = backgroundColor;
+        }
+	</script>
+</body>
+</html>
